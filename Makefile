@@ -1,4 +1,5 @@
 prefix=/usr/local
 
 install:
-	install -d -m 0755 bin/tat ${prefix}/bin/tat
+	mkdir -p ${prefix}/bin
+	install -m 0755 bin/tat ${prefix}/bin/tat
