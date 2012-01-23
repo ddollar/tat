@@ -16,12 +16,14 @@ tat()
     tmux attach-session -t "$session_name"
   fi
 }
-_tat()
-{
-  COMPREPLY=()
-  local session="${COMP_WORDS[COMP_CWORD]}"
-  COMPREPLY=( $(compgen -W "$(tmux list-sessions 2>/dev/null | awk -F: '{ print $1 }')" -- "$session") )
-}
-complete -F _tat tat
 
+# add_tat_com
+# _tat()
+# {
+#   COMPREPLY=()
+#   local session="${COMP_WORDS[COMP_CWORD]}"
+#   COMPREPLY=( $(compgen -W "$(tmux list-sessions 2>/dev/null | awk -F: '{ print $1 }')" -- "$session") )
+# }
+# complete -F _tat tat
 
+tat $1
